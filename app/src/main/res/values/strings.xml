@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">sistemapinkmankart</string>
+    <string name="senha">Senha:</string>
+    <string name="login">Login:</string>
+    <string name="digite_sua_senha">Digite sua senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="digite_seu_cpf">Digite seu CPF</string>
+</resources>
