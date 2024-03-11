@@ -20,5 +20,5 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 material-vversion = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidApplication = { id = "com.android.application", version = "7.4.2" }
 
