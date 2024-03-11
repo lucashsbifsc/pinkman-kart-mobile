@@ -2,7 +2,9 @@
     <string name="app_name">sistemapinkmankart</string>
     <string name="senha">Senha:</string>
     <string name="login">Login:</string>
-    <string name="digite_sua_senha">Digite sua senha</string>
+    <string name="senha_login">Digite sua senha</string>
     <string name="entrar">Entrar</string>
-    <string name="digite_seu_cpf">Digite seu CPF</string>
+    <string name="cpf">CPF:</string>
+    <string name="cpf_cadastro">Digite o CPF do funcionário</string>
+    <string name="cpf_login">Digite seu CPF</string>
 </resources>

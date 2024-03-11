@@ -22,6 +22,7 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -83,6 +84,7 @@
             android:text="Cadastro"
             android:textSize="55sp"
             android:textColor="#001906"
+            android:textStyle="bold"
             android:fontFamily="@font/bree_serif" />
     </FrameLayout>
 
@@ -115,6 +117,7 @@
             android:text="Vendas"
             android:textSize="55sp"
             android:textColor="#001906"
+            android:textStyle="bold"
             android:fontFamily="@font/bree_serif" />
     </FrameLayout>
 
@@ -147,6 +150,7 @@
             android:text="Karts"
             android:textSize="55sp"
             android:textColor="#001906"
+            android:textStyle="bold"
             android:fontFamily="@font/bree_serif" />
     </FrameLayout>
 
