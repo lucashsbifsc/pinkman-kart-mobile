@@ -3,6 +3,7 @@ package com.ifscgaspar.sistemapinkmankart.controle;
 import com.ifscgaspar.sistemapinkmankart.modelo.Funcionario;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,11 +30,11 @@ public class FuncionarioDAO implements IFuncionarioDAO {
         Connection conBD = con.conectarConexao();
 
         try {
-            // Cria um objeto Java para receber os valores do SQL
+            // Cria um objeto JDBC para receber os valores do SQL
             PreparedStatement ps = conBD.prepareStatement(SQL);
 
             // Pega os valores e coloca em cada interrogação do comando SQL como parâmetro
-            ps.setInt(1, end.getCpf());
+            ps.setLong(1, end.getCpf());
             ps.setString(2, end.getNomeCompleto());
             ps.setDate(3, end.getDataNascimento());
             ps.setString(4, end.getCargo());
@@ -66,22 +67,22 @@ public class FuncionarioDAO implements IFuncionarioDAO {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                // Criar objeto
+                // Cria objeto Java
                 Funcionario end = new Funcionario();
 
                 // Pega os valores de cada coluna do registro
-                String cpf = rs.getString("cpf");
+                Long cpf = rs.getLong("cpf");
                 String nomeCompleto = rs.getString("nome_completo");
-                String dataNascimento = rs.getString("data_nascimento");
+                Date dataNascimento = rs.getDate("data_nascimento");
                 String cargo = rs.getString("cargo");
 
-                // Seta os valores no obj java
+                // Seta os valores no objeto java
                 end.setCpf(cpf);
                 end.setNomeCompleto(nomeCompleto);
                 end.setDataNascimento(dataNascimento);
                 end.setCargo(cargo);
 
-                // Adiciona obj no arraylist
+                // Adiciona objeto no ArrayList
                 funcionarios.add(end);
 
             }
@@ -96,7 +97,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     }
 
     public boolean atualizarFuncionario(Funcionario end) {
-        String SQL = "UPDATE enderecos SET nome_completo = ?, data_nascimento = ?, cargo = ?  WHERE cpf = ?";
+        String SQL = "UPDATE funcionarios SET nome_completo = ?, data_nascimento = ?, cargo = ?  WHERE cpf = ?";
 
         Conexao con = Conexao.pegaConexao();
         Connection conBD = con.conectarConexao();
@@ -110,7 +111,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
             ps.setString(1, end.getNomeCompleto());
             ps.setDate(2, end.getDataNascimento());
             ps.setString(3, end.getCargo());
-            ps.setInt(4, end.getCpf());
+            ps.setLong(4, end.getCpf());
 
             // Executa o comando SQL
             retorno = ps.executeUpdate();
@@ -125,7 +126,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     }
 
     public boolean removerFuncionario(Funcionario end) {
-        String SQL = "DELETE FROM enderecos WHERE cpf = ?";
+        String SQL = "DELETE FROM funcionarios WHERE cpf = ?";
 
         Conexao con = Conexao.pegaConexao();
         Connection conBD = con.conectarConexao();
@@ -135,7 +136,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
         try {
             PreparedStatement ps = conBD.prepareStatement(SQL);
 
-            ps.setInt(1, end.getCpf());
+            ps.setLong(1, end.getCpf());
 
             retorno = ps.executeUpdate();
 
@@ -149,7 +150,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     }
 
     public Funcionario buscarFuncionarioPeloCpf(int cpf) {
-        String SQL = "SELECT FROM funcionario WHERE cpf = ?";
+        String SQL = "SELECT FROM funcionarios WHERE cpf = ?";
 
         Conexao con = Conexao.pegaConexao();
         Connection conBD = con.conectarConexao();
@@ -159,12 +160,12 @@ public class FuncionarioDAO implements IFuncionarioDAO {
             PreparedStatement ps = conBD.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
 
-            ps.setInt(1, end.getCpf());
+            ps.setLong(1, end.getCpf());
 
             while (rs.next()) {
-                end.setCpf(rs.getString("cpf"));
+                end.setCpf(rs.getLong("cpf"));
                 end.setNomeCompleto(rs.getString("nome_completo"));
-                end.setDataNascimento(rs.getString("data_nascimento"));
+                end.setDataNascimento(rs.getDate("data_nascimento"));
                 end.setCargo(rs.getString("cargo"));
             }
 
