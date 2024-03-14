@@ -3,17 +3,17 @@ package com.ifscgaspar.sistemapinkmankart.modelo;
 import java.sql.Date;
 
 public class Funcionario {
-    private int cpf;
+    private Long cpf;
     private String nomeCompleto;
     private Date dataNascimento;
     private String cargo;
 
-    public int getCpf() {
+    public Long getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = this.cpf;
+    public void setCpf(Long cpf) {
+        this.cpf = cpf;
     }
 
     public String getNomeCompleto() {
@@ -21,15 +21,15 @@ public class Funcionario {
     }
 
     public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = this.nomeCompleto;
+        this.nomeCompleto = nomeCompleto;
     }
 
     public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = this.dataNascimento;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getCargo() {
@@ -37,6 +37,6 @@ public class Funcionario {
     }
 
     public void setCargo(String cargo) {
-        this.cargo = this.cargo;
+        this.cargo = cargo;
     }
 }
