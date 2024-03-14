@@ -1,6 +1,6 @@
-package controle;
+package com.ifscgaspar.sistemapinkmankart.controle;
 
-import modelo.Funcionario;
+import com.ifscgaspar.sistemapinkmankart.modelo.Funcionario;
 
 import java.util.ArrayList;
 

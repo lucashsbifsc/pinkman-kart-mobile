@@ -1,8 +1,8 @@
-package controle;
+package com.ifscgaspar.sistemapinkmankart.controle;
 
 import java.util.ArrayList;
 
-import modelo.Vendas;
+import com.ifscgaspar.sistemapinkmankart.modelo.Vendas;
 
 public interface IVendasDAO {
 	public int inserirVenda(Vendas end);

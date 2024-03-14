@@ -1,4 +1,4 @@
-package controle;
+package com.ifscgaspar.sistemapinkmankart.controle;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import modelo.Vendas;
+import com.ifscgaspar.sistemapinkmankart.modelo.Vendas;
 
 public class VendasDAO implements IVendasDAO {
 	private static VendasDAO instancia;

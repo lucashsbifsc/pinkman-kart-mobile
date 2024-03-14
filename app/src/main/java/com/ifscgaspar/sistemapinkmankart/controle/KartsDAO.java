@@ -1,4 +1,4 @@
-package controle;
+package com.ifscgaspar.sistemapinkmankart.controle;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import modelo.Karts;
+import com.ifscgaspar.sistemapinkmankart.modelo.Karts;
 
 public class KartsDAO implements IKartsDAO {
 	
