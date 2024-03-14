@@ -1,1 +1,1 @@
-![diagrama_karts](https://github.com/lucashsbifsc/pinkman-kart-mobile/assets/124683425/71ce8909-b414-4256-b926-a64167648de7)
+![diagrama_karts](https://github.com/lucashsbifsc/pinkman-kart-mobile/assets/124683425/a53f258b-ea20-45f1-a4ed-adfc45d8491a)
