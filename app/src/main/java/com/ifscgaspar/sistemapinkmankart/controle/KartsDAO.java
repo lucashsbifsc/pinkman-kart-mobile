@@ -8,8 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.ifscgaspar.sistemapinkmankart.modelo.Funcionario;
-import com.ifscgaspar.sistemapinkmankart.modelo.Karts;
+import modelo.Karts;
 
 public class KartsDAO implements IKartsDAO {
 	
@@ -25,7 +24,7 @@ public class KartsDAO implements IKartsDAO {
 	    }
 
 	public int inserirKart(Karts end) {
-		String SQL = "INSERT INTO karts (cor, modelo, marca, ano, quantidade, data_entrada, preco, fornecedorCnpj) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		String SQL = "INSERT INTO karts (cor, modelo, marca, ano, quantidade, data_entrada, preco, fornecedor_cnpj) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 		Conexao con = Conexao.pegaConexao();
 		Connection conBD = con.conectarConexao();
@@ -69,7 +68,8 @@ public class KartsDAO implements IKartsDAO {
 
         try {
             PreparedStatement ps = conBD.prepareStatement(SQL);
-
+            
+            // Cria um objeto JDBC que espera um retorno do Banco de Dados
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -77,6 +77,7 @@ public class KartsDAO implements IKartsDAO {
                 Karts end = new Karts();
 
                 // Pega os valores de cada coluna do registro
+                long id = rs.getLong("id");
                 String cor = rs.getString("cor");
                 String modelo = rs.getString("modelo");
                 String marca = rs.getString("marca");
@@ -87,6 +88,7 @@ public class KartsDAO implements IKartsDAO {
                 Long fornecedorCnpj = rs.getLong("fornecedor_cnpj");
 
                 // Seta os valores no objeto Java
+                end.setId(id);
                 end.setCor(cor);
                 end.setModelo(modelo);
                 end.setMarca(marca);

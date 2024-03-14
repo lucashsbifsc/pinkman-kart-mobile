@@ -1,6 +1,6 @@
-package com.ifscgaspar.sistemapinkmankart.controle;
+package controle;
 
-import com.ifscgaspar.sistemapinkmankart.modelo.Funcionario;
+import modelo.Funcionario;
 
 import java.sql.Connection;
 import java.sql.Date;
