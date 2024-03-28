@@ -21,6 +21,12 @@ public class FuncionarioDAO implements IFuncionarioDAO {
         return instancia;
     }
 
+    public Funcionario login(String nome, String senha) {
+        Funcionario funcionario = null;
+        // terminar o metodo para login
+        return funcionario;
+    }
+
     public int inserirFuncionario(Funcionario end) {
         // Comando que será executado no SQL
         String SQL = "INSERT INTO funcionarios (cpf, nome_completo, data_nascimento, cargo) VALUES (?, ?, ?, ?)";

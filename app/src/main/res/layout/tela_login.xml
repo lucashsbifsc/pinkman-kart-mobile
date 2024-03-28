@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#09220F"
-    tools:context=".LoginActivity">
+    tools:context=".visao.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -114,9 +114,9 @@
         android:id="@+id/imageView5"
         android:layout_width="320dp"
         android:layout_height="111dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logopinkmankart" />
