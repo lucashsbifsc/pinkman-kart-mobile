@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/telakarts"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#09220F">
+
+    <TextView
+        android:id="@+id/tvCadastroKarts"
+        android:layout_width="200dp"
+        android:layout_height="42dp"
+        android:background="@drawable/roundedtextview"
+        android:fontFamily="@font/bree_serif"
+        android:gravity="center"
+        android:text="Cadastro Karts"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="97dp" />
+
+    <EditText
+        android:id="@+id/edCor"
+        android:layout_width="175dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundededittext"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/bree_serif"
+        android:hint="Digite a cor do kart"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text=""
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="191dp" />
+
+    <TextView
+        android:id="@+id/tvCor"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="@string/cor"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <EditText
+        android:id="@+id/edModelo3"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundededittext"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/bree_serif"
+        android:hint="Selecione a data"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text=""
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="191dp" />
+
+    <TextView
+        android:id="@+id/tvFornecedorCNPJ"
+        android:layout_width="230dp"
+        android:layout_height="38dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="CNPJ do Fornecedor:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <TextView
+        android:id="@+id/tvDataEntrada2"
+        android:layout_width="190dp"
+        android:layout_height="38dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="Data de Entrada:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <TextView
+        android:id="@+id/tvModelo2"
+        android:layout_width="95dp"
+        android:layout_height="38dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="Modelo:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <EditText
+        android:id="@+id/edModelo"
+        android:layout_width="385dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundededittext"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/bree_serif"
+        android:hint="Digite o nome do modelo do kart"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text=""
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="475dp" />
+
+    <EditText
+        android:id="@+id/edModelo4"
+        android:layout_width="385dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundededittext"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/bree_serif"
+        android:hint="Digite o nome do modelo do kart"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text=""
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="381dp" />
+
+    <TextView
+        android:id="@+id/tvAno"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="Ano:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundededittext"
+        android:popupBackground="@color/black"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <EditText
+        android:id="@+id/edCPF3"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundededittext"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/bree_serif"
+        android:hint="Digite a quantidade de karts"
+        android:inputType="date"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text=""
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <TextView
+        android:id="@+id/tvQuantidade"
+        android:layout_width="140dp"
+        android:layout_height="38dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="Quantidade:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="240dp"
+        android:layout_height="83dp"
+        app:srcCompat="@drawable/logopinkmankart"
+        tools:layout_editor_absoluteX="171dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/cantosuperioresquerdoalternativo" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/cantoinferiordireitoalternativo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnListar"
+        android:layout_width="120dp"
+        android:layout_height="56dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="Listar"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#00BF63"
+        app:cornerRadius="10dp"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEntrar2"
+        android:layout_width="170dp"
+        android:layout_height="56dp"
+        android:fontFamily="@font/bree_serif"
+        android:text="Cadastrar"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#00BF63"
+        app:cornerRadius="10dp"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

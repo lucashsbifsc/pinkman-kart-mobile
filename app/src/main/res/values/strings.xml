@@ -7,4 +7,5 @@
     <string name="cpf">CPF:</string>
     <string name="cpf_cadastro">Digite o CPF do funcionário</string>
     <string name="cpf_login">Digite seu CPF</string>
+    <string name="cor">Cor:</string>
 </resources>
