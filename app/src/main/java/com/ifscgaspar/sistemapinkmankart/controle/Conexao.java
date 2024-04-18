@@ -26,6 +26,7 @@ public class Conexao {
     public static Conexao pegaConexao() {
         if(instancia == null) {
             instancia = new Conexao();
+            instancia.conectarConexao();
         }
 
         return instancia;
@@ -38,7 +39,7 @@ public class Conexao {
      */
     public Connection conectarConexao() {
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost/"+ BD + "?serverTimezone=UTC", USERNAME, SENHA);
+            con = DriverManager.getConnection("jdbc:mysql://10.61.6.12/"+ BD + "?serverTimezone=UTC", USERNAME, SENHA);
         } catch (SQLException e) {
             e.printStackTrace();
         }
