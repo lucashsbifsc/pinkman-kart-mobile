@@ -25,8 +25,8 @@ public class VendasDAO implements IVendasDAO {
 	public int inserirVenda(Vendas end) {
 		String SQL = "INSERT INTO vendas (valor_total, data_venda, funcionario_cpf) VALUES (?, ?, ?, ?)";
 
-		Conexao con = Conexao.pegaConexao();
-		Connection conBD = con.conectarConexao();
+		Conexao con = Conexao.getInstancia();
+		Connection conBD = con.conectar();
 
 		int chavePrimariaGerada = Integer.MIN_VALUE;
 
@@ -57,8 +57,8 @@ public class VendasDAO implements IVendasDAO {
 
         String SQL = "SELECT * FROM vendas";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         try {
             PreparedStatement ps = conBD.prepareStatement(SQL);
@@ -98,8 +98,8 @@ public class VendasDAO implements IVendasDAO {
 	public boolean atualizarVenda(Vendas end) {
 		String SQL = "UPDATE vendas SET valor_total = ?, data_venda = ?, funcionario_cpf = ?  WHERE id = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         // Define o retorno como 0 (falso)
         int retorno = 0;
@@ -127,8 +127,8 @@ public class VendasDAO implements IVendasDAO {
 	public boolean removerVenda(Vendas end) {
 		String SQL = "DELETE FROM vendas WHERE id = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         int retorno = 0;
 
@@ -151,8 +151,8 @@ public class VendasDAO implements IVendasDAO {
 	public Vendas buscarVendaPeloId(int id) {
 		String SQL = "SELECT FROM vendas WHERE id = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         Vendas end = new Vendas();
         try {

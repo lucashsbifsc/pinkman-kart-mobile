@@ -32,8 +32,8 @@ public class FuncionarioDAO implements IFuncionarioDAO {
         String SQL = "INSERT INTO funcionarios (cpf, nome_completo, data_nascimento, cargo) VALUES (?, ?, ?, ?)";
 
         // Abre a conexão e cria uma espécie de "ponte de conexão" com o MySQL
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         try {
             // Cria um objeto JDBC para receber os valores do SQL
@@ -64,8 +64,8 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 
         String SQL = "SELECT * FROM funcionarios";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         try {
             PreparedStatement ps = conBD.prepareStatement(SQL);
@@ -105,8 +105,8 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     public boolean atualizarFuncionario(Funcionario end) {
         String SQL = "UPDATE funcionarios SET nome_completo = ?, data_nascimento = ?, cargo = ?  WHERE cpf = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         // Define o retorno como 0 (falso)
         int retorno = 0;
@@ -134,8 +134,8 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     public boolean removerFuncionario(Funcionario end) {
         String SQL = "DELETE FROM funcionarios WHERE cpf = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         int retorno = 0;
 
@@ -158,8 +158,8 @@ public class FuncionarioDAO implements IFuncionarioDAO {
     public Funcionario buscarFuncionarioPeloCpf(int cpf) {
         String SQL = "SELECT FROM funcionarios WHERE cpf = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         Funcionario end = new Funcionario();
         try {

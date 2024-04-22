@@ -26,8 +26,8 @@ public class KartsDAO implements IKartsDAO {
 	public int inserirKart(Karts end) {
 		String SQL = "INSERT INTO karts (cor, modelo, marca, ano, quantidade, data_entrada, preco, fornecedor_cnpj) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-		Conexao con = Conexao.pegaConexao();
-		Connection conBD = con.conectarConexao();
+		Conexao con = Conexao.getInstancia();
+		Connection conBD = con.conectar();
 
 		int chavePrimariaGerada = Integer.MIN_VALUE;
 
@@ -63,8 +63,8 @@ public class KartsDAO implements IKartsDAO {
 
         String SQL = "SELECT * FROM karts";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         try {
             PreparedStatement ps = conBD.prepareStatement(SQL);
@@ -116,8 +116,8 @@ public class KartsDAO implements IKartsDAO {
 	public boolean atualizarKart(Karts end) {
 		String SQL = "UPDATE karts SET cor = ?, modelo = ?, marca = ?, ano = ?, quantidade = ?, data_entrada = ?, preco = ?, fornecedorCnpj = ?  WHERE id = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         // Define o retorno como 0 (falso)
         int retorno = 0;
@@ -150,8 +150,8 @@ public class KartsDAO implements IKartsDAO {
 	public boolean removerKart(Karts end) {
 		String SQL = "DELETE FROM karts WHERE id = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         int retorno = 0;
 
@@ -174,8 +174,8 @@ public class KartsDAO implements IKartsDAO {
 	public Karts buscarKartPeloId(int id) {
 		String SQL = "SELECT FROM karts WHERE id = ?";
 
-        Conexao con = Conexao.pegaConexao();
-        Connection conBD = con.conectarConexao();
+        Conexao con = Conexao.getInstancia();
+        Connection conBD = con.conectar();
 
         Karts end = new Karts();
         try {

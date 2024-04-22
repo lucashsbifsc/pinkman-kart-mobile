@@ -8,17 +8,24 @@ import java.sql.SQLException;
 public class LoginDAO {
     public boolean autenticarLogin(String login, long senha) {
 
-        Conexao con = Conexao.pegaConexao();
+        Conexao con = Conexao.getInstancia();
 
-        System.out.println(login);
-        System.out.println(senha);
         try {
-            if (login.equals("root") && senha == 1234) {
+            Connection conn = con.conectar();
+            PreparedStatement st = conn.prepareStatement("SELECT nome_completo, cpf FROM funcionarios WHERE nome_completo=? AND cpf=?");
+            st.setString(1, login); // Defina o nome do funcionário
+            st.setLong(2, senha); // Defina o CPF como senha
+            ResultSet rs = st.executeQuery();
+
+            if (rs.next()) {
                 // Usuário autenticado
                 return true;
             }
+
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
         } finally {
-           // con.fecharConexao();
+            con.fecharConexao();
         }
 
         return false;

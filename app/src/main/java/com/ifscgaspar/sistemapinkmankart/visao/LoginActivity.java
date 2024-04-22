@@ -1,10 +1,12 @@
 package com.ifscgaspar.sistemapinkmankart.visao;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                Context contexto = getApplicationContext();
                 String login = String.valueOf(edLogin.getText());
                 Long senha = Long.valueOf(String.valueOf(edSenha.getText()));
                 LoginDAO l = new LoginDAO();
@@ -47,6 +50,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(autenticado) {
                     startActivity(new Intent(LoginActivity.this, InicialActivity.class));
+                } else {
+                    Toast toast = Toast.makeText(contexto, "Dados preenchidos de forma incorreta!", Toast.LENGTH_SHORT);
+                    toast.show();
                 }
             }
         });
