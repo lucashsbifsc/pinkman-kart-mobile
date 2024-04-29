@@ -1,63 +1,68 @@
 package com.ifscgaspar.sistemapinkmankart.controle;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
-    /**
-     * - NÃO USAR USERNAME E SENHA EM EMPRESA
-     * - CONSTANTES EM JAVA
-     * - PADRONIZAR MAIÚSCULO
-     */
-    private static final String USERNAME = "root";
-    private static final String SENHA = "aluno";
-    private static final String BD = "diagrama_karts";
-    private Connection con; // JDBC
-    private static Conexao instancia; // SINGLETON
+    private static Connection conexao;
+    private static Conexao instancia;
+    private static String DATABASE = null;
+    private static String USER = null;
+    private static String PSW = null;
 
-    private Conexao() {} // CONSTRUTOR PRIVADO
+    public Conexao() {
+    }
 
-    /**
-     * Método do singleton
-     *
-     * @return conexao
-     */
     public static Conexao getInstancia() {
-        if(instancia == null) {
+        if (instancia == null) {
             instancia = new Conexao();
+            lerArquivoBD();
         }
-
         return instancia;
     }
 
-    /**
-     * Tenta estabelecer conexão com a base de dados selecionada
-     *
-     * @return con
-     */
     public Connection conectar() {
         try {
-            con = DriverManager.getConnection("jdbc:mysql://10.61.6.12/"+ BD + "?serverTimezone=UTC", USERNAME, SENHA);
-        } catch (SQLException e) {
+            conexao = DriverManager.getConnection("jdbc:mysql://localhost/" + DATABASE + "?serverTimezone=UTC", USER,
+                    PSW);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return con;
+        return conexao;
     }
 
-    /**
-     * Fecha a conexão com o MySQL
-     *
-     * @return true ou false; dependendo do resultado
-     */
+    public static void lerArquivoBD() {
+        // Lê as informações de login e senha do arquivo de texto
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("credentials.txt"));
+            if (reader != null) {
+                DATABASE = reader.readLine();
+                USER = reader.readLine();
+                PSW = reader.readLine();
+            }
+            reader.close();
+
+        } catch (IOException e) {
+            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
+            return;
+        }
+    }
+
     public boolean fecharConexao() {
         try {
-            con.close();
-            return true;
+            if (conexao != null) {
+                conexao.close();
+                return true;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return false;
     }
 }
