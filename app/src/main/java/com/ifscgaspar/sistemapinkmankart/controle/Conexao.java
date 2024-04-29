@@ -55,12 +55,10 @@ public class Conexao {
 
     public boolean fecharConexao() {
         try {
-            if (conexao != null) {
-                conexao.close();
-                return true;
-            }
+            conexao.close();
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
 
         return false;
